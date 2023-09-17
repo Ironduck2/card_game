@@ -15,13 +15,14 @@ public class CardMovement : MonoBehaviour
 
     void Update()
     {
-        if (Input.touchCount > 0)
+        if (Input.touchCount == 1)
         {
             Touch touch = Input.GetTouch(0);
+            //Debug.Log("click" + touch.position);
             if (spriteRenderer.bounds.Contains(touch.position))
             {
-                Vector2 pos = touch.position;
                 selectedCard = true;
+                Debug.Log("selectedCard");
             }
         }
         if (selectedCard)
