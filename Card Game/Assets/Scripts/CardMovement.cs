@@ -18,15 +18,16 @@ public class CardMovement : MonoBehaviour
         if (Input.touchCount == 1)
         {
             Touch touch = Input.GetTouch(0);
-            //Debug.Log("click" + touch.position);
+            
             if (spriteRenderer.bounds.Contains(touch.position))
             {
                 selectedCard = true;
                 Debug.Log("selectedCard");
             }
+
+            Debug.Log("click" + touch.position);
+            Debug.Log("card" + spriteRenderer.bounds);
         }
-        if (selectedCard)
-            objectFollowMouse();
     }
 
     private void objectFollowMouse()
